@@ -2,9 +2,9 @@
 
 ![CI](https://github.com/zandenkane/ledger/actions/workflows/ci.yml/badge.svg)
 
-I played guitar on three tracks and my name wasn't on any of them. Never again.
+ever worked on something creative with other people and then when credits come out your name is mysteriously absent? weird how that keeps happening.
 
-That's why this exists. `ledger` is a CLI tool that records who did what on a creative project, when they did it, and what percentage of the pie they own. Every entry goes into a SQLite database and gets chained together with SHA-256 hashes. If somebody goes back and edits a record after the fact, `ledger verify` catches it and tells you exactly where the chain broke.
+ledger is a CLI that records who did what on a creative project. every contribution goes into a SQLite database chained with SHA-256 hashes. if somebody edits a record after the fact, `ledger verify` catches it. think of it as git blame but for credit disputes.
 
 Music, film, art, whatever. If people collaborate on something and credits matter, this is the receipt.
 
