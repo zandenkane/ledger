@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS contributions (
 CREATE TABLE IF NOT EXISTS roles (
     name TEXT PRIMARY KEY
 );
+"""
 
 
 def default_db_path() -> Path:
