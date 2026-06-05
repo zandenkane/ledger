@@ -25,6 +25,12 @@ pip install -e ".[dev]"
 Python 3.10 or newer.
 
 
+
+<p align="center">
+  <img src="assets/chain.png" alt="hash chain integrity" width="90%">
+</p>
+
+
 ## example
 
 ```
