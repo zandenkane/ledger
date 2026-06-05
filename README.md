@@ -18,6 +18,37 @@ pip install -e ".[dev]"
 
 Python 3.10 or newer.
 
+
+## example
+
+```
+$ ledger init myalbum
+created project: myalbum
+
+$ ledger add myalbum --who "alex" --role "guitar" --session "track-3-recording" --split 40
+$ ledger add myalbum --who "sam" --role "drums" --session "track-3-recording" --split 35
+$ ledger add myalbum --who "jordan" --role "mixing" --session "track-3-mix" --split 25
+
+$ ledger show myalbum
+project: myalbum (3 entries, chain intact)
+
+who      role     session             split   date
+alex     guitar   track-3-recording   40%     2026-06-02
+sam      drums    track-3-recording   35%     2026-06-02
+jordan   mixing   track-3-mix         25%     2026-06-03
+
+$ ledger verify myalbum
+chain integrity: OK (3/3 hashes valid)
+```
+
+```mermaid
+graph LR
+    E1[entry 1 + hash] --> E2[entry 2 + hash of E1]
+    E2 --> E3[entry 3 + hash of E2]
+    E3 --> V{verify}
+    V --> OK[chain intact]
+```
+
 ## How it works
 
 You create a project, start sessions within that project, and log contributions against those sessions. Each contribution records the person's name, their role, what they did, and optionally their ownership split. The whole thing is append-only with hash chaining, so nobody can quietly rewrite history.
